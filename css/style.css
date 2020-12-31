@@ -1,0 +1,1854 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;700;900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	width: 100%;
+	padding-top: 10vh;	
+}
+h1,h2,h3,h4,h5,h6,a{
+	font-family: 'Noto Serif JP', serif;
+}
+h2{
+	max-width: 80%;
+	font-size: 1.5em;
+	color: #fff;
+	padding: .5em;
+	margin: 0px auto;
+	background: url(/pic/second-title-ribbon.png) no-repeat center center/ 100% 100%;
+	text-align: center;
+	line-height: 1.5em;
+	font-weight: 900;
+	/* outline: 1px solid red; */
+}
+button:focus,input:focus,textarea:focus{
+	outline: none;
+}
+.back-to-top{
+	color: #DFA359;
+	text-decoration: none;
+	font-weight: 900;
+	width: 60px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	position: fixed;
+	right: 40px;
+	bottom: 0;
+	z-index: 9;
+	background: url(/pic/back-to-top.png) no-repeat center center/ 100% 100%;
+}
+.flyin{
+	animation: flyin 1.5s -.5s ease-in;
+	animation-fill-mode:forwards;
+}
+@keyframes flyin{
+	0%{opacity: 0;transform: translateY(30%);}
+	100%{opacity: 1;transform: translateY(0);}
+}
+/* header選單 */
+.header{
+	width: 100%;
+	height: 10vh;
+	background-color: #222;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	padding-top:10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.header::before,.header::after{
+	content: '';
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	bottom: -40px;
+	z-index: -1;
+}
+.header::before{
+	right: 0px;
+	border-right: 50vw solid #222;
+	border-bottom: 40px solid transparent;
+}
+.header::after{
+	left: 0px;
+	border-left: 50vw solid #222;
+	border-bottom: 40px solid transparent;
+}
+.header .logo{
+	width: 15%;
+	max-width: 100px;
+	margin-top: 1em;
+	margin-left: 1.5em;
+	flex-shrink: 0;
+}
+.header .logo img{
+	width: 100%;
+	vertical-align: middle;
+}
+.header .menu{
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	top:10vh;
+	display: none;
+}
+.header .menu.openpage{
+	display: flex;
+}
+.header .menu a{
+	text-decoration: none;
+	font-size: 1em;
+	letter-spacing: .1em;
+	line-height: 3;
+	background-color: rgba(68,68,68,.9);
+	color:  #DFA359;
+	padding: 5px 20px;
+	position: relative;
+}
+.header .menu a:hover{
+	border-bottom: 1px solid#DFA35980;
+}
+.header .search-box{
+	display: flex;
+	margin-left: auto;
+	position: relative;
+	/* outline: 1px solid yellow; */
+}
+.header .search-box::after{
+	content: '';
+	width: 50%;
+	height: 1px;
+	background-color: #DFA359;
+	position: absolute;
+	right: 1.5em;
+	bottom: -5px;
+}
+.header .search-box input,.header .search-box button{
+	background-color: transparent;
+	border: none;
+}
+.header .search-box button{
+	padding: 5px 10px;
+}
+.header .search-box button i{
+	color:  #DFA359;
+	font-size: 1em;
+}
+.header .far,.header .fas{
+	color:  #DFA359;
+	font-size: 1.5em;
+	margin: 0 .5em;
+}
+
+/* 登錄頁面 */
+.login{
+	background-color: rgba(0,0,0,.35);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;bottom: 0;right: 0;left: 0;
+	z-index: 12;
+	display: none;
+}
+.login.openpage{
+	display: flex;
+}
+.login-wrap{
+	width: 70%;
+	padding: 5%;
+	background-color: rgba(255,255,255,.7);
+	border: 1px solid #ddd;
+	border-radius: 15px;
+	color: #222;
+	backdrop-filter: blur(10px);
+}
+.login-wrap h3{
+	font-size: 28px;
+	text-align: center;
+	margin-bottom: 1%;
+}
+.login-wrap button{
+	width: 35%;
+	color: #fff;
+	font-size: 1em;
+	line-height: 1.8;
+	border: none;
+	border-radius: 5px ;
+	background: linear-gradient( #699,#299);
+	box-shadow: 0 3px 0 0 #899;
+	margin: 1% auto;
+	transition: .5s;
+}
+.login-wrap button:hover{
+	transform: translateY(3px);
+	box-shadow: 0 0 0 0 #899, 0 -3px 0 0 #DFA359;
+}
+.login-wrap .user-keyin{
+	display: flex;
+	flex-direction: column;
+}
+.login-wrap .user-keyin label{
+	color: #333;
+	font-size: 20px;
+	margin-top: 1em;
+}
+.login-wrap .user-keyin label input[type="text"],
+.login-wrap .user-keyin label input[type="password"]{
+	display: block;
+	width: 80%;
+	line-height: 2;
+	border: none;
+}
+.login-wrap .user-keyin a{
+	font-size: 16px;
+	margin-top: .5em;
+	text-decoration: none;
+	color: #338;
+}
+.login-wrap .sign-up-wrap button{
+	display: block;
+}
+.login-wrap .sign-up-wrap::before{
+	content:'';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.login-wrap .outside-login-wrap ul{
+	display: flex;
+	justify-content: space-around;
+	margin: 15px 0;
+}
+.login-wrap .outside-login-wrap ul .fab{
+	font-size: 40px;
+	color: #fff;
+}
+.login-wrap .outside-login-wrap ul .fab:hover{
+	transform: scale(1.1);
+	color: rgba(51,51,136,.7);
+}
+/* 故事頁 banner */
+.main-story{
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+}
+.main-story .keyvisual-fluid{
+	width: 100%;
+	height: 90vh;
+	overflow: hidden;
+	position: relative;
+}
+.main-story .keyvisual-fluid img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.main-story .keyvisual-fluid::after{
+	content: url(/pic/scroll-down.png);
+	position: absolute;
+	left: 45%;
+	right: 55%;
+	bottom: 5%;
+	animation: arrowmove 1s linear alternate infinite;
+}
+.main-story .banner-words{
+	color: #fff;
+	font-size: 3em;
+	font-weight: 900;
+	text-shadow: 3px 3px 5px #DFA359;
+	line-height: 1.5;
+	text-align: center;
+	font-family: 'Noto Serif JP', serif;
+	position: absolute;
+	top: 30%;
+	left: 0;right: 0;
+	margin: auto;
+	z-index: 2;
+	transform: translateY(-10%);
+	transition: 2s;
+	opacity: 0;
+	/* outline: 1px solid red; */
+}
+.main-story .banner-words::after{
+	content: '';
+	background-color:rgba(38,30,71,.3);
+	width: 60%;
+	height: 100%;
+	border-top: 1px solid #DFA359;
+	border-right: 1px solid #DFA359;
+	transform: skew(-30deg);
+	position: absolute;
+	top: -10%;
+	left: 5%;
+	right: 0;
+	margin: auto;
+	z-index: -1;
+	box-shadow:  -50px 50px rgba(38,30,71,.5);
+	transition: 2s;
+	opacity: 1;
+}
+.main-story .banner-words.openning{
+	transform: translateY(0);
+	opacity: 1;
+}
+@keyframes arrowmove{
+	  0%{ transform: translateY(0)}
+	100%{ transform: translateY(15px)}
+}
+/* 最新消息 */
+.news{
+	padding: 50px 0px;
+}
+.news .container{
+	width: 90%;
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.news .item{
+	width: 97%;
+	/* display: flex; */
+	margin: 1.5%;
+	margin-bottom: 5%;
+	background-color: #fff;
+	box-shadow: 0 5px 10px rgba(80,45,25,.5);
+	position: relative;
+}
+.news .item:after{
+	content: '';
+	position: absolute;
+	top: 0;right: 0;left: 0;bottom: 0;
+	background-color: rgba(0,0,0,0);
+	transition: .3s;
+}
+.news .item:hover:after{
+	background-color: rgba(0,0,0,.1);
+}
+.news .item .pic{
+	width: 100%;
+}
+.news .item .pic img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	vertical-align: middle;
+}
+.news .item .txt{
+	width: 100%;
+	min-width: 180px;
+	padding: 1em;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+.news .item h4{
+	font-size: 1.2em;
+	margin: 1em 0px;
+}
+.news .item p{
+	font-size: 1em;
+	line-height: 1.8;
+	color: #888;
+}
+.news .item .btn{
+	text-decoration: none;
+	color:  #DFA359;
+	font-size: 1em;
+	padding:0px 1em;
+	border: 1px solid  #DFA359;
+	border-radius: 100px;
+	align-self: flex-end;
+	margin-top:auto ;
+	z-index: 1;
+}
+.news .item .btn:hover{
+	color: #fff;
+	background-color:  #DFA359;
+}
+/* 各區icon */
+.area-select{
+	width: 100%;
+	margin: 50px auto 0;
+	background-image:linear-gradient(#fff 50%,transparent 50%),url(/pic/cross-bg.png);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.area-select .item{
+	width: 80%;
+	position: relative;
+	background-color: #000;
+	border-left: 5px solid #DFA359;
+	border-right: 5px solid #DFA359;
+	box-sizing: border-box;
+	border-radius: 30px;
+	overflow: hidden;
+	margin: 1%;
+}
+.area-select .item img{
+	width: 100%;
+	vertical-align: middle;
+	opacity: 0;
+}
+.area-select .item .txt{
+	background-color: #261E47;
+	padding: 0px 20px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: 1s;
+}
+.area-select .item:hover img{
+	opacity: 1;
+}
+.area-select .item:hover .txt{
+	background-image: unset;
+	background-color: rgba(29, 14, 14,.5);
+}
+.area-select .item h3{
+	color: #eee;
+	text-align: center;
+	font-size: 2em;
+	letter-spacing: .1em;
+	transition: 1s;
+	position: absolute;
+	top: 35%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-weight: 700;
+}
+.area-select .item h3:after{
+	content: '》';
+	display: block;
+	text-align: center;
+	position: relative;
+	transform: rotate(-90deg);
+	top:0;
+	color: #bdb1a3;
+	transition: .5s;
+}
+.area-select .item:hover h3:after{
+	opacity: 0;
+}
+.area-select .item:hover h3{
+	top:10%;
+}
+.area-select .item p{
+	color: #ddd;
+	font-size: 1em;
+	opacity: 0;
+	transition: 1s;
+	margin-top: auto;
+}
+.area-select .item:hover p{
+	opacity: 1;
+	margin-bottom: 15%;
+}
+/* 區域文字介紹 */
+.area-intro{
+	padding: 20px 0;
+	background-image: url(/pic/cross-bg.png);
+}
+.area-intro .container{
+	width: 90%;
+	margin: 2em auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	/* outline: 1px solid blue; */
+}
+.area-intro .container:nth-child(2)::before{
+	content:url(/pic/orcc.svg);
+	position: absolute;
+	transform: scale(2);
+	left: 0;
+	bottom: -50%;
+	opacity: .5;
+}
+.area-intro .container:nth-child(1)::before{
+	content:url(/pic/orcc.svg);
+	position: absolute;
+	right: 0;
+	bottom: -20%;
+	opacity: .7;
+}
+.area-intro .pic{
+	width: 100%;
+	position: relative;
+	flex-shrink:0 ;
+	z-index: 1;
+	opacity: 0;
+}
+.area-intro .pic img{
+	width: 100%;
+	/* outline: 1px solid red; */
+}
+.area-intro .txt{
+	width: 90%;
+	padding: 2em 2em 5em;
+	border-bottom: 8px double #daa520 ;
+	border-radius: 15px;
+	box-sizing: border-box;
+	background-color: rgba(255,255,255,.8);
+	backdrop-filter: blur(10px);
+	flex-shrink: 0;
+	z-index: 1;
+	position: relative;
+	overflow: hidden;
+	order: -1;
+	/* outline: 1px solid blue; */
+}
+.area-intro :nth-child(odd) .txt{
+	margin-left: auto;
+}
+.area-intro :nth-child(even) .txt{
+	margin-right: auto;
+}
+.area-intro h3{
+	font-size: 4em;
+	color: #F8ECDE;
+	position: absolute;
+	letter-spacing: .1em;
+	right: -15px;
+	bottom: -10px;
+	transform:rotate(-5deg);
+	/* outline: 1px solid red; */
+	z-index: -1;
+}
+.area-intro p{
+	font-size: 1.2em;
+	color:  #261E47;
+	margin-bottom: .5em;
+}
+.area-intro p:first-of-type::first-letter{
+	font-size: 2em;
+	float: left;
+	padding-right: .3em;
+	line-height: 1em;
+	font-weight: 700;
+}
+/* 交通指南 */
+.traffic-info{
+	width: 80%;
+	margin: auto;
+	padding-bottom: 50px;
+}
+.traffic-info .txt{
+	padding: 2.5em 0;
+}
+.traffic-info .txt .traffic-way{
+	width: 100%;
+	padding: .5% 2%;
+	box-sizing: border-box;
+	margin: 1em auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	float: left;
+}
+.traffic-info .traffic-way .icon{
+	color: #261E47;
+	font-size: 1.5em;
+	text-align:center;
+	margin-bottom: 1em;
+}
+.traffic-info .traffic-way .icon .fas{
+	font-size: 3.5em;
+	margin: 5px 0;
+}
+.traffic-info .traffic-way li{
+	font-size: 1em;
+	color: #555;
+	line-height: 1.8;
+}
+.traffic-info .map{
+	clear: both;
+	width: 100%;
+	height: 50vh;
+	margin: 0 auto;
+}
+.traffic-info .map iframe{
+	width: 100%;
+	height: 100%;
+}
+
+/* 特別企劃 */
+/* sidebar 側邊選單 */
+.spevent-goods{
+	position: relative;
+}
+.sidebar{
+	width: 200px;
+	padding: 1em 0px;
+	background: linear-gradient(0deg, #261E47cc, #141025cc);
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	transition: .5s;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	transform: translateX(-200px);
+	z-index: 1;
+}
+.sidebar .search-bar{
+	display: flex;
+	border: 1px solid #fff;
+	margin: 10px;
+}
+.sidebar .search-bar input,
+.sidebar .search-bar button{
+	border: none;
+	padding: 5px;
+	background-color: transparent;
+	color: #fff;
+}
+.sidebar .search-bar input{
+	width: 80%;
+	margin-right:auto ;
+	/* outline: 1px solid blue; */
+}
+.sidebar .search-bar button{
+	flex-basis: auto;
+	/* outline: 1px solid blue; */
+}
+.sidebar .sidebar-menu{
+	position: sticky;
+	top: 20%;
+	left: 0;
+}
+.sidebar .sidebar-menu li + li::before{
+	content: '';
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	border-top: 1px solid #aaa;
+}
+.sidebar-menu li:hover{
+	background-image: linear-gradient(180deg,#0000001a,#00000033);
+}
+.sidebar .sidebar-menu li:hover > ul{
+	display: block;
+	z-index: 1;
+}
+.sidebar-menu li > ul {
+	padding-left: 20px;
+	display: none;
+}
+.sidebar .sidebar-menu a{
+	font-size: 1.2em;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	line-height: 2.5;
+	position: relative;
+	padding:5px 10px;
+}
+.sidebar .sidebar-menu a .fas{
+	width: 2em;
+	transform: scale(0);
+	margin-right:-2em ;
+	transition: .5s;
+}
+.sidebar .sidebar-menu a:hover .fas{
+	transform: scale(1);
+	margin-right: 0em ;
+}
+.sidebar label[for="sidebar-switch"]{
+	color: #fff;
+	width: 30px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #DFA359;
+	border-radius: 50px ;
+	position: sticky;
+	top: 20%;
+	transform: translateX(210px);
+	transition: .5s;
+}
+#sidebar-switch{
+	position: absolute;
+	opacity: 0;
+}
+#sidebar-switch:checked + .sidebar{
+	transform: translateX(0);
+}
+#sidebar-switch:checked + .sidebar label[for="sidebar-switch"]{
+	right:-30px;
+}
+#sidebar-switch:checked + .sidebar label[for="sidebar-switch"] .fas{
+	transform:scaleX(-1);
+}
+/* 商品選單列 */
+.spevent-goods .function-list{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 20px 0 50px;
+	/* outline: 1px solid red; */
+}
+.spevent-goods .bread-crumb{
+	margin-left: 1em;
+	display: flex;
+	flex-wrap: wrap;
+}
+.spevent-goods .bread-crumb li{
+	margin: 0 .2em;
+}
+.spevent-goods .bread-crumb :last-child a{
+	color:#d39c12;
+}
+.spevent-goods .bread-crumb li + li:before{
+	content: '〉';
+	color: #aaa;
+	padding-right: .2em;
+}
+.spevent-goods .bread-crumb a{
+	font-size: 1em;
+	text-decoration: none;
+	color: #aaa;
+}
+.spevent-goods .change-view button{
+	display: none;
+	border: none;
+	padding: .5em;
+	border-radius: 10%;
+}
+.spevent-goods .change-view button:focus{
+	outline: none;
+	background-color:#333;
+}
+.spevent-goods .change-view .fas{
+	font-size: 2em;
+	color: #d39c12;
+}
+/* 限定商品 */
+.spevent-goods .goods-group header{
+	padding-top: 10vh;
+}
+.spevent-goods .goods-group{
+	width: 90%;
+	margin: auto;
+}
+.spevent-goods .goods-group ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.spevent-goods .goods-group ul li{
+	width: 100%;
+	height: 30%;
+	margin: 1.5%;
+	/* outline: 1px solid red; */
+}
+.spevent-goods .goods-group ul li .pic{
+	width: 100%;
+	margin: 2% 0;
+	border: 1px solid  #daa520 ;
+	border-radius: 15px;
+	overflow: hidden;
+	position: relative;
+}
+.spevent-goods .goods-group ul li .pic img{
+	width: 100%;
+	object-fit: cover;
+	vertical-align: middle;
+}
+
+.spevent-goods .goods-group ul li:hover{
+	opacity: .8;
+}
+.spevent-goods .goods-group ul li:hover a{
+	text-decoration: underline;
+}
+.spevent-goods .goods-group ul li:nth-child(-n+4) .pic::after{
+	content:url(/pic/goods/popular-goods.png);
+	transform:scale(.8) ;
+	position: absolute;
+	top:-5%;
+	right: -5%;
+	/* outline: 1px solid yellow; */
+}
+
+.spevent-goods .goods-group ul li p{
+	color: indianred;
+	float:right;
+}
+.spevent-goods .goods-group .fa-heart{
+	color: #eee;
+	font-size: 2em;
+	text-shadow: 0 0 2px #333;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+.spevent-goods .goods-group .fa-heart.liked{
+	color: #f34d4d;
+	text-shadow: 0 0 2px #fff;
+}
+/* 收藏教學 */
+.liked-guide{
+	position: fixed;
+	top: 0;	bottom: 0;	right: 0; left: 0;
+	background-color: rgba(0,0,0,.8);
+	z-index: 10;
+	opacity: 0;
+	animation: delay 1s linear  1 forwards;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@keyframes delay{
+	0%{opacity: .3;}
+	100%{ opacity:1;}
+}
+.liked-guide .container{
+	color: #fff;
+	width: 80%;
+	padding: 2%;
+	margin: auto;
+	background: rgba(0,0,0,.5);
+	box-sizing: border-box;
+	position: relative;
+}
+.liked-guide .container h5{
+	font-size: 1.5em;
+	text-align: center;
+	margin: 10px 0;
+	color: rgb(172, 192, 230);
+}
+.liked-guide .container .step{
+	padding: 1em 2em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2em;
+}
+.liked-guide .step img{
+	width: 70%;
+}
+.liked-guide .step h6{
+	font-size: 1.2em;
+	color: #d39c12;
+	margin-bottom: .5em;
+}
+.liked-guide label{
+	color: #fff;
+	font-size: 1em;
+	padding: .5em 1em;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	background-color: transparent;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.liked-guide label:hover{
+	background-color: rgba(102,102,102,.5);
+	box-shadow: 0 0 10px rgba(255,255,255,.5);
+}
+#confirm-btn:checked ~ .liked-guide{
+	display: none;
+}
+#confirm-btn{
+	position: absolute;
+	bottom:0;
+	left: 0;
+	transform:scale(0);
+}
+
+/* 合作店家 */
+.cooperative-store{
+	padding: 50px 0px;
+	background-image: url(/pic/cross-bg.png);
+}
+.cooperative-store .store-group{
+	width: 90%;
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.cooperative-store .store{
+	background-color: #eee;
+	width: 100%;
+	padding: 3em 1em;
+	margin: 2.5%;
+	box-sizing: border-box;
+	transition: .5s;
+	position: relative;
+	border-top: 5px solid #aaa;
+	overflow: hidden;
+}
+.cooperative-store .store:hover{
+	border-top: 5px solid  #261E47;
+	box-shadow: 0px 25px 20px -5px #DFA35933  inset;
+}
+.cooperative-store .store img{
+	width: 100%;
+}
+.cooperative-store .store img[src*="coshop"]{
+	width: 30%;
+}
+.cooperative-store .store .txt{
+	color:#666;
+	font-size: 1em;
+	line-height: 1.2;
+	padding: 1%;
+	transition: .3s;
+}
+.cooperative-store .store:hover .txt{
+	color:  #DFA359;
+}
+.cooperative-store .store::before{
+	content:'';
+	background: url(/pic/storeroof.png) repeat-x;
+	height: 2em;
+	position: absolute;
+	top:0;
+	right: 0;
+	left:0;
+	transition: .5s;
+	/* outline: 1px solid red; */
+}
+.cooperative-store .store:after{
+	content: '';
+	width: 100%;
+	border-bottom: 15px solid #261E47;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: .5s;
+}
+.cooperative-store .store:hover:after{
+	border-left: 200px solid #DFA359; 
+}
+
+/* 購票辦法頁面 */
+/* ticket-sales */
+.ticket-sales section{
+	padding: 5%;
+	margin: auto;
+}
+.ticket-sales section+section{
+	border-top:1px solid #ddd ;
+}
+.ticket-sales .ticket-card-select{
+	background: url('/pic/cross-bg.png');
+}
+.ticket-sales .ticket-program{
+	padding-top: 80px;
+}
+.ticket-sales .ticket-type{
+	margin: 2em 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	/* outline: 1px solid yellow; */
+}
+.ticket-sales .ticket-type .ticket{
+	width: 100%;
+	padding: 1em 0;
+	margin: 1em auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	box-shadow: 1px 1px 5px #aaa;
+}
+.ticket-sales .ticket-type .ticket::before,
+.ticket-sales .ticket-type .ticket::after{
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+}
+.ticket-sales .ticket-type .ticket::before{
+	top: -15px;
+	right: -15px;
+	border-bottom-left-radius: 100%;
+	box-shadow: -2px 2px 5px -2px #aaa;
+}
+.ticket-sales .ticket-type .ticket::after{
+	bottom: -15px;
+	left: -15px;
+	border-top-right-radius: 100%;
+	box-shadow: 2px -2px 5px -2px #aaa;
+}
+.ticket-sales .ticket-type .ticket:hover{
+	box-shadow: 10px 10px 10px -5px #aaa;
+}
+.ticket-sales .ticket-type .ticket:hover::before,
+.ticket-sales .ticket-type .ticket:hover::after{
+	z-index: -1;
+}
+.ticket-sales .ticket-type .ticket-normal{
+	background:url(/pic/ticket-normal-bg.png);
+}
+.ticket-sales .ticket-type .ticket-package{
+	background:url(/pic/ticket-package-bg.png);
+}
+.ticket-sales .ticket-type .ticket-hotel{
+	background:url(/pic/ticket-hotel-bg.png);
+}
+.ticket-sales .ticket-type .ticket .pic{
+	width: 45%;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.ticket-sales .ticket-type .ticket .pic img{
+	width: 100%;
+}
+.ticket-sales .ticket-type .ticket .txt{
+	width: 80%;
+	text-align: center;
+	box-sizing: border-box;
+}
+.ticket-sales .ticket-type .ticket h4{
+	color: #543;
+	font-size: 1.5em;
+	font-weight: 900;
+	letter-spacing: .2em;
+	line-height: 2em;
+}
+.ticket-sales .ticket-type .ticket li{
+	color: #333;
+	font-size: 1em;
+	line-height: 1.8em;
+	letter-spacing: .1em;
+	font-style: italic;
+}
+.ticket-sales .ticket-type .ticket .price{
+	color: #df9a46;
+	letter-spacing: .2em;
+	font-size: 1.5em;
+	float: right;
+}
+.ticket-sales .caption{
+	color: #aaa;
+	margin-bottom: 10%;
+}
+.ticket-sales .ticket-card-select .title{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	color: #333;
+	/* outline: 1px solid red; */
+}
+.ticket-sales .ticket-card-select .title h3{
+	font-size: 1.5em;
+	line-height: 3;
+}
+.ticket-sales .ticket-card-group{
+	margin: 10% 0;
+	/* outline: 1px solid red; */
+	width: 100%;
+}
+.ticket-sales .ticket-card-group:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.ticket-sales .ticket-card-group .ticket-card{
+	width: 100%;
+	margin: 1%;
+	padding: 1em 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background: rgba(170,153,136,0.8);
+	text-align: center;
+	transition: .5s;
+}
+.ticket-sales .ticket-card-group .ticket-card:hover{
+	backdrop-filter: brightness(80%);
+	transform: translateY(-1%);
+}
+.ticket-sales .ticket-card-group .ticket-card.sold-out{
+	background-color: #aaa;
+	transform: translateY(0);
+}
+.ticket-sales .ticket-card-group .ticket-card.sold-out p{
+	color: #ddd;
+	background-color: #999;
+}
+
+.ticket-sales .ticket-card h6{
+	color:#fff;
+	font-size: 1.2em;
+	line-height: 2;
+	margin-bottom: 1em;
+}
+.ticket-sales .ticket-card h6::after{
+	content: '';
+	display: block;
+	height: 1px;
+	background-color: #ddd;
+	transform: scale(0);
+	transition: .8s;
+}
+.ticket-sales .ticket-card:hover h6::after{
+	transform: scale(1);
+}
+.ticket-sales .ticket-card.sold-out h6::after{
+	background-color: transparent;
+}
+.ticket-sales .ticket-card p{
+	color: #eee;
+	line-height: 1.5;
+	padding: 5px 0;
+	margin-bottom: .5em;
+}
+.ticket-sales .ticket-card .package{
+	background-color:#e6bf84;
+}
+.ticket-sales .ticket-card .hotel{
+	background-color:#9cafc0;
+}
+.ticket-sales .ticket-card p span{
+	margin-left: 1em;
+}
+/* 購票相關問題 */
+.ticket-sales .contact{
+	padding-bottom: 100px;
+}
+.ticket-sales .contact h4{
+	font-size: 1.5em;
+	line-height: 3;
+}
+.ticket-sales .contact h4::before{
+	content: '|';
+	margin-right: 1em;
+	color: #DFA359;
+}
+.ticket-sales .contact p{
+	font-size: 1em;
+	color: #333;
+}
+.ticket-sales .contact a{
+	color: #DFA359;
+}
+
+/* 活動須知 */
+/* 回信表單 */
+.reply-message{
+	padding: 10vh 0 30%;
+}
+.reply-message .container{
+	width: 90%;
+	margin: auto;
+}
+.reply-message .container .txt{
+	width: 90%;
+	font-size: 1em;
+	margin: 2em auto;
+	text-align: center;
+	color: #333;
+}
+.reply-message .reply-form form{
+	width: 90%;
+	margin: auto;
+	padding: 1em;
+	background-color:#fff;
+	box-shadow: 5px 5px 10px #ccc;
+}
+.reply-message form label{
+	font-size: 0;
+}
+.reply-message form input::placeholder,.reply-message textarea::placeholder{
+	color: #ccc;
+}
+.reply-message label input,.reply-message textarea{
+	width: 100%;
+	font-size: 1.2rem;
+	border: none;
+	line-height: 3;
+	border-bottom: 1px solid #DFA35980;
+	margin: 2% .5% 0;
+}
+.reply-message form input[type="submit"]{
+	color: #fff;
+	background-color: #DFA359;
+	font-size: 1.5rem;
+	line-height: 2;
+	transition: 1s;
+	border: 1px solid #DFA359;
+}
+.reply-message form input[type="submit"]:hover{
+	color: #DFA359;
+	background-color: #fff;
+	border: 1px solid #DFA359;
+}
+
+/* 其他資料來源 */
+.material-source{
+	padding: 30% 0;
+	background: url('/pic/G1+.png');
+}
+.material-source ul{
+	width: 80%;
+	padding: 20px;
+	margin: 20px auto;
+	background-color: #fff;
+	border-radius: 15px;
+}
+.material-source ul li,.material-source a{
+	font-size: 1em;
+}
+.material-source ul li{
+	margin: 1em 0;
+	line-height: 1.8;
+}
+.material-source a{
+	display: block;
+	color:#DFA359;
+	padding: 0 1em;
+}
+/* footer */
+.main-footer{
+	width: 100%;
+	background: #222;
+	position: relative;
+}
+.main-footer .container{
+	width: 90%;
+	margin: auto;
+
+}
+.main-footer::before{
+	content:'';
+	width: 0px;
+	height: 0px;
+	border-left: 50vw solid #222;
+	border-right: 50vw solid #222;
+	border-top: 40px solid transparent;
+	position: absolute;
+	top: -40px;
+	right: 0;
+	z-index: 1;
+}
+.footer-item{
+	width: 80%;
+	margin: 2.5%;
+}
+.footer-item h4{
+	font-size: 1em;
+	color:#eee;
+	padding: 10px 0px;
+	margin-bottom: 10px ;
+	border-bottom: 2px dotted #888;
+}
+.footer-item nav{
+	display: flex;
+}
+.footer-item nav a{
+	font-size: .8em;
+	text-decoration: none;
+	color:#eee;
+	line-height: 2;
+	transition: .5s;
+}
+.container div:not(.footer-sub) nav a:hover{
+	background:linear-gradient(90deg,rgba(223,163,89,.5),transparent);
+	transform: translateX(5px);
+} 
+.footer-item nav i{
+	padding: 0 8px;
+}
+.footer-item nav i:hover{
+	color: #DFA359;
+}
+.footer-sub i{
+	font-size: 2em;
+	margin-right:10px;
+}
+.footer-sub form{
+	display: flex;
+	width: 80%;
+	margin: .5em 0;
+}
+.footer-sub input[type="text"]{
+	border: none;
+	padding: 5px 10px;
+	flex-grow: 1;
+	width: 0px;          
+}
+.footer-sub input[type="submit"]{
+	border: none;
+	padding: 5px 10px;
+	color: #eee;
+	background-color:  #DFA359;
+}
+.main-footer .copyright{
+	text-align: center;
+	color: #eee;
+	padding: 5px 0;
+	background-color: #000;
+	line-height: 30px;
+}
+
+
+/* ipad版+手機橫向版 */
+@media screen and (min-width:768px){ 
+h2{
+	width: 40%;
+	padding: .5em 3em;
+}
+/* header選單 */
+.header .search-box::after{
+	width: 60%;
+}
+/* 登錄頁面 */
+.login-wrap{
+	width: 50%;
+}
+/* 故事頁 banner */
+/* 最新消息 */
+.news .item{
+	display: flex;
+}
+.news .item .pic{
+	width: 40%;
+}
+.news .item .txt{
+	width: 60%;
+}
+/* 各區icon */
+.area-select .item{
+	width: 48%;
+}
+.area-select .item h3{
+	font-size: 3em;
+}
+
+/* 區域文字介紹 */
+.area-intro .pic{
+	margin-top: -30%;
+}
+.area-intro .txt{
+	width: 60%;
+}
+.area-intro p{
+	font-size: 1em;
+}
+/* 交通指南 */
+.traffic-info .txt .traffic-way{
+	width: 50%;
+	margin: 2.5em auto;
+}
+.traffic-info .traffic-way .icon .fas{
+	font-size: 3em;
+}
+/* 特別企劃 */
+/* sidebar 側邊選單 */
+/* 商品選單列 */
+.spevent-goods .change-view button{
+	display: inline-block;
+}
+/* 限定商品 */
+.spevent-goods .goods-group{
+	width: 80%;
+}
+.spevent-goods .goods-group ul li{
+	width: 30%;
+}
+.spevent-goods .goods-group ul.view-list{
+	display: block;
+	margin-left: 10px;
+}
+.spevent-goods .goods-group ul.view-list li{
+	width: 90%;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #ddd;
+	/* outline: 1px solid red; */
+}
+.spevent-goods .goods-group ul.view-list li .pic{
+	width: 45%;
+	max-height: none;
+	/* outline: 1px solid red; */
+}
+.spevent-goods .goods-group .fa-heart{
+	font-size: 1.5em;
+}
+
+/* 收藏教學 */
+.liked-guide .container{
+	width: 80%;
+	background: linear-gradient(transparent 8%,rgba(0,0,0,.8) 8%, rgba(38,30,50,.6) 92%, transparent 92%),url(/pic/kv04.jpg) center center/100% 100%;
+	border-radius: 15px;
+}
+.liked-guide .container .step{
+	flex-direction: row;
+	align-items: flex-start;
+}
+.liked-guide .step img{
+	width: 35%;
+}
+.liked-guide .step .txt{
+	margin-left: 30px;
+}
+.liked-guide label{
+	right: 2em;
+	bottom: 1em;
+}
+
+
+/* 合作店家 */
+.cooperative-store .store{
+	width: 45%;
+}
+
+/* 購票辦法頁面 */
+/* ticket-sales */
+
+.ticket-sales .ticket-type .ticket{
+	width: 70%;
+	flex-direction: row;
+}
+.ticket-sales .ticket-type .ticket .txt{
+	width: 55%;
+	text-align: left;
+	padding: 1em;
+}
+.ticket-sales .ticket-card-group{
+	width: 80%;
+}
+.ticket-sales .ticket-card-group .ticket-card{
+	float: left;
+	width: 49%;
+	margin: .5%;
+}
+.ticket-sales .ticket-card-group .ticket-card:last-child{
+	width: 99%;
+}
+/* 購票相關問題 */
+/* 活動須知 */
+/* 回信表單 */
+.reply-message{
+	padding: 10vh 0 15%;
+}
+.reply-message .container .txt{
+	font-size: 1.2em;
+}
+.reply-message .reply-form form{
+	width: 80%;
+}
+/* 其他資料來源 */
+.material-source{
+	padding: 15% 0;
+}
+/* footer */
+.main-footer .container{
+	display: flex;
+	flex-wrap: wrap;
+}
+.footer-item{
+	width: 28.33%;
+}
+.footer-item nav{
+	flex-direction: column;
+}
+.footer-sub{
+	width: 61.66%;
+}
+.footer-sub nav{
+	flex-direction: row;
+	float: left;
+}
+.footer-sub form{
+	width: 50%;
+	margin: auto 0px;
+	float: right;
+}
+
+.main-footer .copyright{
+	clear: both;
+}
+}
+
+
+/* 桌機板 */
+@media screen and (min-width:1200px) {
+h2{
+	width: 25%;
+	font-size: 1.5em;
+	padding: .5em 1em;
+}
+/* header選單 */
+.header.unfixed{
+	position: relative;
+}
+.news.unfixed{
+	margin-top: 0px;
+}
+.header .menu{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: unset;
+	margin-left: 30px;
+}
+.header .menu a{
+	line-height: 1;
+	margin: 0 10px;
+	padding: 2px 20px;
+	background: url(../pic/header-menu.png) no-repeat center center/ 100% 100%;
+}
+.header .menu a:hover{
+	transform:translateY(-2px);
+	border-bottom: none;
+}
+.header .menu a:after{
+	content:'';
+	position: absolute;
+	right: 50%;
+	left: 50%;
+	height: 0;
+	bottom: -8px;
+	border-bottom: 1px solid #DFA359;
+	transition: .3s;
+}
+.header .menu a:hover:after{
+	right: 15px;
+	left: 15px;
+} 
+#main-menu{
+	display: none;
+}
+/* 登錄頁面 */
+.login-wrap{
+	width: 30%;
+	padding: 5%;
+}
+.login-wrap button{
+	width: 40%;
+}
+/* 故事頁 banner */
+.main-story{
+	margin-top: -10vh;
+}
+.main-story .keyvisual-fluid{
+	height: 100vh;
+}
+.main-story .banner-words{
+	font-size: 60px;
+}
+.main-story .banner-words::after{
+	width: 40%;
+	height: 100%;
+	left: 5%;
+	right: 0;
+	margin: auto;
+}
+/* 最新消息 */
+.news{
+	margin-top: 10vh;
+}
+.news .item{
+	width: 30%;
+	margin-bottom: 2%;
+}
+.news .item .pic{
+	width: 50%;
+}
+.news .item .txt{
+	width: 50%;
+	font-size: .8em;
+	padding: 1em;
+	box-sizing: border-box;
+}
+/* 各區icon */
+.area-select .item{
+	width: 22%;
+	border-left: 6px solid #DFA359;
+	border-right: 6px solid #DFA359;
+}
+.area-select .item:first-child ~.item{
+	margin-left: 1%;
+}
+.area-select .item h3{
+	font-size: 2em;
+}
+.area-select .item:hover p{
+	margin-bottom: 10%
+}
+/* 區域文字介紹 */
+.area-intro{
+	padding: 10px 0 50px;
+}
+.area-intro .container{
+	max-width: 1440px;
+	height: 40%;
+	margin: 50px auto 60px;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
+	/* outline: 1px solid blue; */
+}
+.area-intro :nth-child(even){
+	flex-direction: row-reverse;
+}
+.area-intro .pic{
+	width: 65%;
+	margin: auto;
+}
+.area-intro .txt{
+	width: 50%;
+	order: 0;
+}
+.area-intro :nth-child(even) .txt{
+	margin-right: -20%;
+	/* outline: 1px solid red; */
+}
+.area-intro :nth-child(odd) .txt{
+	margin-left: -20%;
+}
+/* 交通指南 */
+.traffic-info{
+	width: 100%;
+	display:flex;
+}
+.traffic-info .txt{
+	width: 50%;
+	/* outline: 1px solid red; */
+}
+.traffic-info .txt .traffic-way{
+	width: 80%;
+	padding-top: 1em;
+	display: block;
+	float: none;
+}
+.traffic-info .traffic-way .icon{
+	width: 100px;
+	height: 100px;
+	padding-right: 1em;
+	margin-right: 1em;
+	border-right: 3px solid #ddd;
+	float: left;
+}
+.traffic-info .traffic-way .icon .fas{
+	font-size: 2.5em;
+	margin-bottom: 10px;
+}
+.traffic-info .map{
+	width: 50%;
+	height: unset;
+	/* outline: 1px solid red; */
+}
+.traffic-info .map iframe{
+	width: 100%;
+	height: 100%;
+}
+
+/* 特別企劃 */
+/* sidebar 側邊選單 */
+.sidebar{
+	border-right: 5px solid #daa520;
+	background: linear-gradient(0deg, #261E47, #141025);
+	box-shadow: 5px 0 10px  #d39c1280;
+}
+.sidebar-menu li {
+	position: relative;
+	/* outline: 1px solid blue; */
+}
+.sidebar-menu li ul{
+	width: 100px;
+	background-color: #DFA359;
+	box-shadow: 5px 0 10px #00000040;
+	position: absolute;
+	top:5px;
+	left:200px;
+	display:none;
+}
+.sidebar .sidebar-menu li ul li a{
+	color: #fff;
+}
+.sidebar label[for="sidebar-switch"]{
+	border-radius: 0 50px 50px 0 ;
+	top: 50%;
+	transform: translateX(200px);
+}
+#sidebar-switch:checked + .sidebar{
+	transform: translateX(0);
+}
+#sidebar-switch:checked ~ .goods-group{
+	margin-right: 0;
+}
+/* 商品選單列 */
+.liked-guide .container{
+	width: 60%;
+}
+.liked-guide .container .step{
+	margin-bottom: 1em;
+}
+/* 限定商品 */
+.spevent-goods .goods-group ul li{
+	width: 30%;
+	height: 30%;
+	min-height: 250px;
+	margin: 2% 1.5%;
+}
+.spevent-goods .goods-group ul.view-list li .pic{
+	max-width: 35%;
+}
+
+/* 收藏教學 */
+.liked-guide .container{
+	width: 40%;
+}
+/* 合作店家 */
+.cooperative-store .store-group{
+	width: 92%;
+}
+.cooperative-store .store{
+	width: 250px;
+	padding: 30px 10px;
+	margin: 0px 5px;
+}
+.cooperative-store .store .txt{
+	font-size: 14px;
+	padding: 10px;
+}
+.cooperative-store .store:after{
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-left: 135px solid #aaa;
+	border-right: 135px solid #261E47;
+	border-bottom: 15px solid #261E47;
+}
+.cooperative-store .store:hover:after{
+	border-left: 136px solid #DFA359; 
+}
+
+/* 購票辦法頁面 */
+/* ticket-sales */
+.ticket-sales .ticket-type{
+	flex-direction: row;
+	/* outline: 1px solid yellow; */
+}
+.ticket-sales .ticket-type .ticket{
+	width: 30%;
+}
+.ticket-sales .ticket-type .ticket .txt{
+	padding: .5em;
+}
+.ticket-sales .ticket-type .ticket h4, .ticket-sales .ticket-type .ticket .price{
+	font-size: 1em;
+}
+.ticket-sales .ticket-type .ticket li{
+	font-size: .8em;
+}
+.ticket-sales .ticket-card-group .ticket-card{
+	width: 24%;
+}
+.ticket-sales .ticket-card p span{
+	display: block;
+	margin-left: 0;
+}
+
+/* 購票相關問題 */
+
+.ticket-sales .contact h4{
+	font-size: 1.2em;
+}
+.ticket-sales .contact p{
+	font-size: 0.8em;
+}
+
+
+
+/* 活動須知 */
+/* 回信表單 */
+
+.reply-message .container{
+	width: 60%;
+}
+.reply-message .container .txt{
+	width: 85%;
+}
+.reply-message .reply-form{
+	width: 100%;
+	background: url('/pic/contact-bg.jpg') left top no-repeat;
+	background-size: 80%;
+}
+.reply-message .reply-form form{
+	width: 60%;
+	padding: 0 1em;
+	box-shadow: -10px 0px 5px -5px #261E4780;
+	float: right;
+}
+.reply-message .reply-form:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.reply-message label input,.reply-message textarea{
+	font-size: 16px;
+}
+.reply-message form label:nth-of-type(-n+2) input{
+	width: 49%;
+}
+.reply-message form label:nth-of-type(2) ~ label input,.reply-message form textarea{
+	width: 100%;
+}
+.reply-message form input[type="submit"]{
+	font-size: 20px;
+}
+/* 其他資料來源 */
+.material-source ul{
+	width: 60%;
+}
+.material-source ul li{
+	font-size: 1.2em;
+}
+.material-source a{
+	font-size: 0.8em;
+}
+/* footer */
+.main-footer .container{
+	width: 90%;
+}
+.footer-item{
+	width: 0;
+	flex-grow:1;
+	margin: 2%;
+}
+.footer-sub form{
+	width: 100%;
+}
+.footer-sub nav{
+	margin-bottom: 20px;
+}
+
+}
+
+
