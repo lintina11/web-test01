@@ -958,7 +958,7 @@ button:focus,input:focus,textarea:focus{
 	border-top:1px solid #ddd ;
 }
 .ticket-sales .ticket-card-select{
-	background: url('/pic/cross-bg.png');
+	background: url(../pic/cross-bg.png);
 }
 .ticket-sales .ticket-program{
 	padding-top: 80px;
@@ -1207,7 +1207,7 @@ button:focus,input:focus,textarea:focus{
 /* 其他資料來源 */
 .material-source{
 	padding: 30% 0;
-	background: url('/pic/G1+.png');
+	background: url(../pic/G1+.png);
 }
 .material-source ul{
 	width: 80%;
@@ -1797,7 +1797,7 @@ h2{
 }
 .reply-message .reply-form{
 	width: 100%;
-	background: url('/pic/contact-bg.jpg') left top no-repeat;
+	background: url(../pic/contact-bg.jpg) left top no-repeat;
 	background-size: 80%;
 }
 .reply-message .reply-form form{
