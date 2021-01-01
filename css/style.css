@@ -20,7 +20,7 @@ h2{
 	color: #fff;
 	padding: .5em;
 	margin: 0px auto;
-	background: url(/pic/second-title-ribbon.png) no-repeat center center/ 100% 100%;
+	background: url(pic/second-title-ribbon.png) no-repeat center center/ 100% 100%;
 	text-align: center;
 	line-height: 1.5em;
 	font-weight: 900;
@@ -41,7 +41,7 @@ button:focus,input:focus,textarea:focus{
 	right: 40px;
 	bottom: 0;
 	z-index: 9;
-	background: url(/pic/back-to-top.png) no-repeat center center/ 100% 100%;
+	background: url(pic/back-to-top.png) no-repeat center center/ 100% 100%;
 }
 .flyin{
 	animation: flyin 1.5s -.5s ease-in;
@@ -257,7 +257,7 @@ button:focus,input:focus,textarea:focus{
 	object-fit: cover;
 }
 .main-story .keyvisual-fluid::after{
-	content: url(/pic/scroll-down.png);
+	content: url(pic/scroll-down.png);
 	position: absolute;
 	left: 45%;
 	right: 55%;
@@ -382,7 +382,7 @@ button:focus,input:focus,textarea:focus{
 .area-select{
 	width: 100%;
 	margin: 50px auto 0;
-	background-image:linear-gradient(#fff 50%,transparent 50%),url(/pic/cross-bg.png);
+	background-image:linear-gradient(#fff 50%,transparent 50%),url(pic/cross-bg.png);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -466,7 +466,7 @@ button:focus,input:focus,textarea:focus{
 /* 區域文字介紹 */
 .area-intro{
 	padding: 20px 0;
-	background-image: url(/pic/cross-bg.png);
+	background-image: url(pic/cross-bg.png);
 }
 .area-intro .container{
 	width: 90%;
@@ -478,7 +478,7 @@ button:focus,input:focus,textarea:focus{
 	/* outline: 1px solid blue; */
 }
 .area-intro .container:nth-child(2)::before{
-	content:url(/pic/orcc.svg);
+	content:url(pic/orcc.svg);
 	position: absolute;
 	transform: scale(2);
 	left: 0;
@@ -486,7 +486,7 @@ button:focus,input:focus,textarea:focus{
 	opacity: .5;
 }
 .area-intro .container:nth-child(1)::before{
-	content:url(/pic/orcc.svg);
+	content:url(pic/orcc.svg);
 	position: absolute;
 	right: 0;
 	bottom: -20%;
@@ -785,7 +785,7 @@ button:focus,input:focus,textarea:focus{
 	text-decoration: underline;
 }
 .spevent-goods .goods-group ul li:nth-child(-n+4) .pic::after{
-	content:url(/pic/goods/popular-goods.png);
+	content:url(pic/goods/popular-goods.png);
 	transform:scale(.8) ;
 	position: absolute;
 	top:-5%;
@@ -884,7 +884,7 @@ button:focus,input:focus,textarea:focus{
 /* 合作店家 */
 .cooperative-store{
 	padding: 50px 0px;
-	background-image: url(/pic/cross-bg.png);
+	background-image: url(pic/cross-bg.png);
 }
 .cooperative-store .store-group{
 	width: 90%;
@@ -926,7 +926,7 @@ button:focus,input:focus,textarea:focus{
 }
 .cooperative-store .store::before{
 	content:'';
-	background: url(/pic/storeroof.png) repeat-x;
+	background: url(pic/storeroof.png) repeat-x;
 	height: 2em;
 	position: absolute;
 	top:0;
@@ -1008,13 +1008,13 @@ button:focus,input:focus,textarea:focus{
 	z-index: -1;
 }
 .ticket-sales .ticket-type .ticket-normal{
-	background:url(/pic/ticket-normal-bg.png);
+	background:url(pic/ticket-normal-bg.png);
 }
 .ticket-sales .ticket-type .ticket-package{
-	background:url(/pic/ticket-package-bg.png);
+	background:url(pic/ticket-package-bg.png);
 }
 .ticket-sales .ticket-type .ticket-hotel{
-	background:url(/pic/ticket-hotel-bg.png);
+	background:url(pic/ticket-hotel-bg.png);
 }
 .ticket-sales .ticket-type .ticket .pic{
 	width: 45%;
@@ -1401,7 +1401,7 @@ h2{
 /* 收藏教學 */
 .liked-guide .container{
 	width: 80%;
-	background: linear-gradient(transparent 8%,rgba(0,0,0,.8) 8%, rgba(38,30,50,.6) 92%, transparent 92%),url(/pic/kv04.jpg) center center/100% 100%;
+	background: linear-gradient(transparent 8%,rgba(0,0,0,.8) 8%, rgba(38,30,50,.6) 92%, transparent 92%),url(pic/kv04.jpg) center center/100% 100%;
 	border-radius: 15px;
 }
 .liked-guide .container .step{
