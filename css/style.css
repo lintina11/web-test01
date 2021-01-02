@@ -816,7 +816,7 @@ button:focus,input:focus,textarea:focus{
 	background-color: rgba(0,0,0,.8);
 	z-index: 10;
 	opacity: 0;
-	animation: delay 1s linear  1 forwards;
+	animation: delay 1s 2s linear  1 forwards;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
