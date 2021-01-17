@@ -1676,6 +1676,7 @@ h2{
 }
 .sidebar-menu li {
 	position: relative;
+	font-size: .8em;
 	/* outline: 1px solid blue; */
 }
 .sidebar-menu li ul{
